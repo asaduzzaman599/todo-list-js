@@ -1,6 +1,7 @@
 // console.log('welcome')
 let count = 0;
 const tableBody = document.getElementById('table-body');
+const deleteButton = document.getElementById('delete-all');
 
 document.getElementById('add-button').addEventListener('click',function(){
     const inputField = document.getElementById('add-field');
@@ -24,6 +25,7 @@ document.getElementById('add-button').addEventListener('click',function(){
         `;
         tableBody.appendChild(tableRow);
         inputField.value = '';
+        deleteButton.removeAttribute('disabled');
 
     }else{
         alert('Empty Field No Data Found')
@@ -42,10 +44,20 @@ tableBody.addEventListener('click',function(e){
         const tableRows = document.getElementsByClassName('table-row');
         console.log(tableRows);
 
+        if(count==0){
+            deleteButton.setAttribute("disabled",true)
+        }
+
         for(let i = 0; i<tableRows.length;i++){
             tableRows[i].childNodes[0].innerText = i+1;
             /*console.log(
                  tableRows[i].childNodes[0].innerText);*/
+
         }
     }
 })
+
+function deleteAll(){
+    tableBody.innerHTML = ``; deleteButton.setAttribute("disabled",true);
+    count =0;
+}
