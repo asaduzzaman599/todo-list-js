@@ -14,6 +14,7 @@ document.getElementById('add-button').addEventListener('click',function(){
         // console.log(tableBody);
 
         const tableRow = document.createElement('tr');
+        tableRow.classList.add('table-row')
         tableRow.innerHTML = `<th scope="row">${count}</th>
         <td>${inputField.value}</td>
         <td>
@@ -37,5 +38,14 @@ tableBody.addEventListener('click',function(e){
         const childNode = e.target.parentNode.parentNode;
         parentNode.removeChild(childNode); 
         console.log(e.target.parentNode.parentNode.parentNode);
+
+        const tableRows = document.getElementsByClassName('table-row');
+        console.log(tableRows);
+
+        for(let i = 0; i<tableRows.length;i++){
+            tableRows[i].childNodes[0].innerText = i+1;
+            /*console.log(
+                 tableRows[i].childNodes[0].innerText);*/
+        }
     }
 })
