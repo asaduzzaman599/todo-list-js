@@ -15,8 +15,8 @@
 
     <main class="container text-center w-75 m-auto">
         <div class="input-group mt-5">
-            <input class="form-control" aria-label="With textarea"></input>
-            <button class="btn btn-primary">With textarea</button>
+            <input id="add-field" class="form-control" aria-label="With textarea"></input>
+            <button id="add-button" class="btn btn-primary">With textarea</button>
             <table class="table mt-5">
                 <thead>
                   <tr>
@@ -26,11 +26,11 @@
                     
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="table-body">
                   <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
-                    <td>Otto</td>
+                    <td><button class="btn btn-danger">Delete</button></td>
 
                   </tr>
                 </tbody>
