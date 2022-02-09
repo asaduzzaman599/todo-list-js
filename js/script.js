@@ -7,7 +7,7 @@ document.getElementById('add-button').addEventListener('click',function(){
     const inputField = document.getElementById('add-field');
     console.log()
     // console.log(inputField);
-    if(inputField.value != '' ){
+    if(inputField.value != '' && isNaN(parseInt(inputField.value))){
         count++;
         // console.log(inputField);
         
@@ -27,7 +27,11 @@ document.getElementById('add-button').addEventListener('click',function(){
         inputField.value = '';
         deleteButton.removeAttribute('disabled');
 
-    }else{
+    }else if(!isNaN(parseInt(inputField.value))){
+        
+        alert('Description Start With Number Not Allowed')
+    }
+    else{
         alert('Empty Field No Data Found')
     }
 })
